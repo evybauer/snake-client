@@ -10,9 +10,15 @@ const connect = function() {
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
-    console.log("Name: ELB");
+    console.log("Successfully connected to game server");
+    conn.write('Name: ELB');
   });
 
+  // conn.on('connect', () => {
+  //   setInterval(() => {
+  //     conn.write('Move: up');
+  //   }, 50) 
+  // });
 
   conn.on('data', (data) => {
     console.log(data);
@@ -23,3 +29,4 @@ const connect = function() {
 
 
 module.exports = {connect};
+
