@@ -14,6 +14,11 @@ const connect = function() {
     conn.write('Name: ELB');
   });
 
+    conn.on('connect', () => {
+      console.log("Message successfully sent");
+      conn.write('Say: Hello there. :) ');
+  });
+
   // conn.on('connect', () => {
   //   setInterval(() => {
   //     conn.write('Move: up');
